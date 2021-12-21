@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\ViewModel\" />
+    <Folder Include="Entities\Model\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Validations\" />
+    <Folder Include="ValueObjects\" />
+    <Folder Include="Aggregates\" />
+  </ItemGroup>
+
+</Project>
