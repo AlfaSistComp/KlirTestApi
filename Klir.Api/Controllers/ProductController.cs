@@ -38,6 +38,17 @@ namespace Klir.Api.Controllers {
                 return StatusCode(500, "Error in get product.");
             }
         }
-
+        [HttpPut("{id}/{idpromotion}")]
+        public IActionResult Put(int id, int idpromotion) {
+            try {
+                var result = app.BindProductPromotion(id, idpromotion);
+                if (!result) {
+                    return BadRequest(new { Erro = true});
+                }
+                return Ok(new { Erro = false });
+            } catch {
+                return StatusCode(500, new { Erro = true });
+            }
+        }
     }
 }

@@ -6,5 +6,10 @@ using System.Threading.Tasks;
 
 namespace Klir.Domain.Entities.ViewModel {
     public class ProductViewModel {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Idpromotion { get; set; }
+        public string Promotion { get; set; }
     }
 }

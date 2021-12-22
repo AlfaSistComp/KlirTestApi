@@ -1,5 +1,7 @@
 export class ProductViewModel {
-  id: number | undefined;
-  name: string | undefined;
-  price: number | undefined;
+  id: number =0;
+  name: string="";
+  price: number=0;
+  promotion: string="";
+  idpromotion: number=0;
 }

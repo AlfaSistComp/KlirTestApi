@@ -1,5 +1,6 @@
 ﻿using Klir.Domain.Base;
 using Klir.Domain.Entities.Model;
+using Klir.Domain.Entities.ViewModel;
 using Klir.Infrastructure.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -14,11 +15,17 @@ namespace Klir.Application.Data {
         public ProductApp(ProductContext _db) {
             db = _db;
         }
-        public async Task<List<Product>> GetAsync() {
+        public async Task<List<ProductViewModel>> GetAsync() {
             try {
-                IQueryable<Product> _return = db.Product;
-                return await _return.AsNoTracking().ToListAsync();
-            } catch {
+                var _return = db.Product.Include(i=>i.Promotion).Select(i=> new ProductViewModel{ 
+                    Id = i.Id,
+                    Name = i.Name,
+                    Price = i.Price,
+                    Idpromotion = (i.Promotion == null ? 0 : i.Promotion.Id) ,
+                    Promotion = (i.Promotion == null ? "" : i.Promotion.Name)
+                }).AsQueryable();
+                return await _return.ToListAsync();
+            } catch (Exception ex) {
                 return null;
             }
         }
@@ -34,7 +41,11 @@ namespace Klir.Application.Data {
             if (_prod == null) {
                 return false;
             } else {
-                _prod.FKPromotion = idPromotion;
+                if (idPromotion == 0) {
+                    _prod.FKPromotion = null;
+                } else {
+                    _prod.FKPromotion = idPromotion;
+                }
                 try {
                     db.SaveChanges();
                     return true;
