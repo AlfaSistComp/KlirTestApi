@@ -24,16 +24,21 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Compile Remove="%2a%2a\**" />
+    <Compile Remove="Pages\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="%2a%2a\**" />
+    <Content Remove="Pages\**" />
     <EmbeddedResource Remove="%2a%2a\**" />
+    <EmbeddedResource Remove="Pages\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="%2a%2a\**" />
+    <None Remove="Pages\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Remove="%2a%2a\**" />
+    <TypeScriptCompile Remove="Pages\**" />
     <TypeScriptCompile Remove="ProductApp\**" />
   </ItemGroup>
 
@@ -59,15 +64,9 @@
 
   <ItemGroup>
     <Compile Include="Pages\Error.cshtml.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="appsettings.Development.json" />
-    <Content Include="appsettings.json" />
-    <Content Include="Pages\Error.cshtml" />
-    <Content Include="Pages\_ViewImports.cshtml" />
     <Content Include="ProductApp\angular.json" />
     <Content Include="ProductApp\package-lock.json" />
     <Content Include="ProductApp\package.json" />
@@ -78,6 +77,8 @@
 
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="Pages\Error.cshtml" />
+    <None Include="Pages\_ViewImports.cshtml" />
     <None Include="ProductApp\.browserslistrc" />
     <None Include="ProductApp\.editorconfig" />
     <None Include="ProductApp\.gitignore" />
