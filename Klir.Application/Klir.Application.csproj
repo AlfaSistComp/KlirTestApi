@@ -9,8 +9,4 @@
     <ProjectReference Include="..\Klir.Infrastructure\Klir.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
 </Project>
