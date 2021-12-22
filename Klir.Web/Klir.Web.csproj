@@ -1,15 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
-    <SpaRoot>ClientApp\</SpaRoot>
+    <SpaRoot>ProductApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <AssemblyName>Klir.Web</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,25 +24,17 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Compile Remove="%2a%2a\**" />
-    <Compile Remove="ClientApp\**" />
-    <Compile Remove="Produtoapp\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="%2a%2a\**" />
-    <Content Remove="ClientApp\**" />
-    <Content Remove="Produtoapp\**" />
     <EmbeddedResource Remove="%2a%2a\**" />
-    <EmbeddedResource Remove="ClientApp\**" />
-    <EmbeddedResource Remove="Produtoapp\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="%2a%2a\**" />
-    <None Remove="ClientApp\**" />
-    <None Remove="Produtoapp\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Remove="%2a%2a\**" />
-    <TypeScriptCompile Remove="Produtoapp\**" />
+    <TypeScriptCompile Remove="ProductApp\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,55 +53,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="%2a%2a/%2a" />
-    <None Remove="ClientApp\.editorconfig" />
-    <None Remove="ClientApp\.gitignore" />
-    <None Remove="ClientApp\angular.json" />
-    <None Remove="ClientApp\browserslist" />
-    <None Remove="ClientApp\e2e\protractor.conf.js" />
-    <None Remove="ClientApp\e2e\src\app.e2e-spec.ts" />
-    <None Remove="ClientApp\e2e\src\app.po.ts" />
-    <None Remove="ClientApp\e2e\tsconfig.e2e.json" />
-    <None Remove="ClientApp\package-lock.json" />
-    <None Remove="ClientApp\package.json" />
-    <None Remove="ClientApp\README.md" />
-    <None Remove="ClientApp\src\app\app.component.html" />
-    <None Remove="ClientApp\src\app\app.component.ts" />
-    <None Remove="ClientApp\src\app\app.module.ts" />
-    <None Remove="ClientApp\src\app\app.server.module.ts" />
-    <None Remove="ClientApp\src\app\home\home.component.html" />
-    <None Remove="ClientApp\src\app\home\home.component.ts" />
-    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.css" />
-    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.html" />
-    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.ts" />
-    <None Remove="ClientApp\src\assets\.gitkeep" />
-    <None Remove="ClientApp\src\environments\environment.prod.ts" />
-    <None Remove="ClientApp\src\environments\environment.ts" />
-    <None Remove="ClientApp\src\index.html" />
-    <None Remove="ClientApp\src\karma.conf.js" />
-    <None Remove="ClientApp\src\main.ts" />
-    <None Remove="ClientApp\src\polyfills.ts" />
-    <None Remove="ClientApp\src\styles.css" />
-    <None Remove="ClientApp\src\test.ts" />
-    <None Remove="ClientApp\src\tsconfig.app.json" />
-    <None Remove="ClientApp\src\tsconfig.server.json" />
-    <None Remove="ClientApp\src\tsconfig.spec.json" />
-    <None Remove="ClientApp\src\tslint.json" />
-    <None Remove="ClientApp\tsconfig.json" />
-    <None Remove="ClientApp\tslint.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <TypeScriptCompile Remove="%2a%2a\%2a.ts" />
     <TypeScriptCompile Remove="%2a%2a\%2a.tsx" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Controllers\WeatherForecastController.cs" />
     <Compile Include="Pages\Error.cshtml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="WeatherForecast.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -171,6 +123,10 @@
     <TypeScriptCompile Include="ProductApp\src\main.ts" />
     <TypeScriptCompile Include="ProductApp\src\polyfills.ts" />
     <TypeScriptCompile Include="ProductApp\src\test.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
