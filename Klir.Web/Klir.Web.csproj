@@ -22,16 +22,45 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="%2a%2a\**" />
     <Compile Remove="ClientApp\**" />
+    <Compile Remove="Produtoapp\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="%2a%2a\**" />
     <Content Remove="ClientApp\**" />
+    <Content Remove="Produtoapp\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
     <EmbeddedResource Remove="ClientApp\**" />
+    <EmbeddedResource Remove="Produtoapp\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="%2a%2a\**" />
     <None Remove="ClientApp\**" />
+    <None Remove="Produtoapp\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="%2a%2a\**" />
+    <TypeScriptCompile Remove="Produtoapp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a/%2a.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="%2a%2a\%2a.config" />
+    <Content Remove="%2a%2a\%2a.cshtml" />
+    <Content Remove="%2a%2a\%2a.json" />
+    <Content Remove="%2a%2a\%2a.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="%2a%2a/%2a.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="%2a%2a/%2a" />
     <None Remove="ClientApp\.editorconfig" />
     <None Remove="ClientApp\.gitignore" />
     <None Remove="ClientApp\angular.json" />
@@ -67,11 +96,81 @@
     <None Remove="ClientApp\src\tslint.json" />
     <None Remove="ClientApp\tsconfig.json" />
     <None Remove="ClientApp\tslint.json" />
-    <None Remove="Produtoapp\src\app\model\Product.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Remove="%2a%2a\%2a.ts" />
+    <TypeScriptCompile Remove="%2a%2a\%2a.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Controllers\WeatherForecastController.cs" />
+    <Compile Include="Pages\Error.cshtml.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WeatherForecast.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json" />
+    <Content Include="appsettings.json" />
+    <Content Include="Pages\Error.cshtml" />
+    <Content Include="Pages\_ViewImports.cshtml" />
+    <Content Include="ProductApp\angular.json" />
+    <Content Include="ProductApp\package-lock.json" />
+    <Content Include="ProductApp\package.json" />
+    <Content Include="ProductApp\tsconfig.app.json" />
+    <Content Include="ProductApp\tsconfig.json" />
+    <Content Include="ProductApp\tsconfig.spec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="ProductApp\.browserslistrc" />
+    <None Include="ProductApp\.editorconfig" />
+    <None Include="ProductApp\.gitignore" />
+    <None Include="ProductApp\karma.conf.js" />
+    <None Include="ProductApp\README.md" />
+    <None Include="ProductApp\src\app\app.component.css" />
+    <None Include="ProductApp\src\app\app.component.html" />
+    <None Include="ProductApp\src\app\navbar\navbar.component.css" />
+    <None Include="ProductApp\src\app\navbar\navbar.component.html" />
+    <None Include="ProductApp\src\app\product-admin\product-admin.component.css" />
+    <None Include="ProductApp\src\app\product-admin\product-admin.component.html" />
+    <None Include="ProductApp\src\app\shopping-cart\shopping-cart.component.css" />
+    <None Include="ProductApp\src\app\shopping-cart\shopping-cart.component.html" />
+    <None Include="ProductApp\src\assets\.gitkeep" />
+    <None Include="ProductApp\src\favicon.ico" />
+    <None Include="ProductApp\src\index.html" />
+    <None Include="ProductApp\src\styles.css" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Klir.Domain\Klir.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ProductApp\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\app.component.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\model\ErroViewModel.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\model\ProductViewModel.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\model\Promotion.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\model\PromotionViewModel.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\navbar\navbar.component.spec.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\product-admin\product-admin.component.spec.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\product-admin\product-admin.component.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\product-admin\product.service.spec.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\product-admin\product.service.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\shopping-cart\shopping-cart.component.spec.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\shopping-cart\shopping-cart.component.ts" />
+    <TypeScriptCompile Include="ProductApp\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="ProductApp\src\environments\environment.ts" />
+    <TypeScriptCompile Include="ProductApp\src\main.ts" />
+    <TypeScriptCompile Include="ProductApp\src\polyfills.ts" />
+    <TypeScriptCompile Include="ProductApp\src\test.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -1,0 +1,19 @@
+.button-group {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+label {
+    position:absolute;
+    top:-20px;
+    font-size:smaller;
+}
+.div-select {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

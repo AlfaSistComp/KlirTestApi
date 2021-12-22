@@ -19,7 +19,7 @@ namespace Klir.Web {
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration => {
-                configuration.RootPath = "ProdutoApp/dist";
+                configuration.RootPath = "ProductApp/dist";
             });
         }
 
@@ -51,7 +51,7 @@ namespace Klir.Web {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "ProdutoApp";
+                spa.Options.SourcePath = "ProductApp";
 
                 if (env.IsDevelopment()) {
                     spa.UseAngularCliServer(npmScript: "start");
