@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductAdminComponent } from './product-admin/product-admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

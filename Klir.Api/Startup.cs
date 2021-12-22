@@ -37,7 +37,7 @@ namespace Klir.Api {
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(opt => opt.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => {
