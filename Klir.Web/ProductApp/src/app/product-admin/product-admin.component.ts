@@ -44,7 +44,6 @@ export class ProductAdminComponent implements OnInit {
       });
   }
   HavePromotion(product: ProductViewModel) {
-    console.log(product.idpromotion);
     return product.idpromotion > 0;
   }
   ProductClear(product: ProductViewModel) {
@@ -74,7 +73,6 @@ export class ProductAdminComponent implements OnInit {
     var _prod = idproduct;
     this.servico.updatePromotion(_prod, _prom).subscribe({
       next: (_return: ErroViewModel) => {
-        console.log(_return);
         if (_return.erro) {
           console.log(_return.erro);
         } else {

@@ -18,16 +18,19 @@ a {
   font-style: normal;
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 ul li {
-  padding: 10px;
   margin-left: 10px;
+  padding-top: 7px;
   width: 150px;
+  height: 40px;
   text-align: center;
   transition: 0.5s;
   background-color: #33638b;
-  cursor: pointer;
 }
 
   ul li.active {

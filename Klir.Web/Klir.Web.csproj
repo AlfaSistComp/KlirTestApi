@@ -58,6 +58,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ProductApp\src\app\model\ProductCartViewModel.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Remove="%2a%2a\%2a.ts" />
     <TypeScriptCompile Remove="%2a%2a\%2a.tsx" />
   </ItemGroup>
@@ -108,6 +112,7 @@
     <TypeScriptCompile Include="ProductApp\src\app\app.component.ts" />
     <TypeScriptCompile Include="ProductApp\src\app\app.module.ts" />
     <TypeScriptCompile Include="ProductApp\src\app\model\ErroViewModel.ts" />
+    <TypeScriptCompile Include="ProductApp\src\app\model\ProductCartViewModel.ts" />
     <TypeScriptCompile Include="ProductApp\src\app\model\ProductViewModel.ts" />
     <TypeScriptCompile Include="ProductApp\src\app\model\Promotion.ts" />
     <TypeScriptCompile Include="ProductApp\src\app\model\PromotionViewModel.ts" />

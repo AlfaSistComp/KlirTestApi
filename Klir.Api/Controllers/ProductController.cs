@@ -1,4 +1,5 @@
 ﻿using Klir.Application.Data;
+using Klir.Domain.Entities.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,7 +19,7 @@ namespace Klir.Api.Controllers {
         public async Task<IActionResult> Get() {
             try {
                 var result = await app.GetAsync();
-                if (result == null) {
+                if (result is null) {
                     return BadRequest(new { Error = true, Message = "No Product Found." });
                 }
                 return Ok(result);
@@ -30,7 +31,7 @@ namespace Klir.Api.Controllers {
         public async Task<IActionResult> Get(int id) {
             try {
                 var result = await app.GetAsync(id);
-                if (result == null) {
+                if (result is null) {
                     return BadRequest(new { Error = true, Message = "Product Not Found." });
                 }
                 return Ok(result);

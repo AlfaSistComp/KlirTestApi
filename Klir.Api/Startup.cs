@@ -21,6 +21,7 @@ namespace Klir.Api {
             services.AddDbContext<ProductContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ProductApp>();
             services.AddScoped<PromotionApp>();
+            services.AddScoped<CheckoutApp>();
             services.AddControllers();
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Klir.Api", Version = "v1" });

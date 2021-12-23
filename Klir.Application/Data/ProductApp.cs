@@ -25,7 +25,7 @@ namespace Klir.Application.Data {
                     Promotion = (i.Promotion == null ? "" : i.Promotion.Name)
                 }).AsQueryable();
                 return await _return.ToListAsync();
-            } catch (Exception ex) {
+            } catch {
                 return null;
             }
         }
@@ -38,7 +38,7 @@ namespace Klir.Application.Data {
         }
         public bool BindProductPromotion(int idProduct, int idPromotion) {
             var _prod = db.Product.Where(i => i.Id == idProduct).FirstOrDefault();
-            if (_prod == null) {
+            if (_prod is null) {
                 return false;
             } else {
                 if (idPromotion == 0) {
